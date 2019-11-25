@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from "react";
+import NavElement from "./NavElement";
+import "./NaveMenu.css";
+let arr = [
+  { name: "Home" },
+  {
+    name: "Services",
+    drop: ["For entrepreneurs", "For students", "For hobbyists"]
+  },
+  { name: "Contact" }
+];
+export default function NavMenu() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul className="menu">
+        {arr.map(el => (
+          <NavElement array={el} />
+        ))}{" "}
+      </ul>
     </div>
   );
 }
-
-export default App;
